@@ -1,5 +1,5 @@
 class AVehicle {
-  protected drive(): void {
+  private drive(): void {
     console.log('chuga chuga');
   }
   honk(): void {
@@ -8,13 +8,14 @@ class AVehicle {
   }
 }
 const vehicle = new AVehicle();
-
+//vehicle.drive(); not allowed
 vehicle.honk();
 
 class Car extends AVehicle {
   //overriding method on child class
-  public honk():void{
-    this.drive();
+   honk():void{
+    //this.drive(); not allowed
+    console.log('beep')
   }
 }
 const car = new Car();
