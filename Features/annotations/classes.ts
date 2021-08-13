@@ -9,11 +9,11 @@ class AVehicle {
 }
 const vehicle = new AVehicle();
 //vehicle.drive(); not allowed
-vehicle.honk();
+vehicle.honk(); //accessing private method drive() indirectly
 
 class Car extends AVehicle {
-  //overriding method on child class
-   honk():void{
+    //overriding method on child class
+    honk():void{
     //this.drive(); not allowed
     console.log('beep')
   }
@@ -21,3 +21,11 @@ class Car extends AVehicle {
 const car = new Car();
 
 car.honk();
+
+/*
+private modifier/keyword does not add any type of security around th application,
+or protects from some malicious user.
+
+The only reason to mark private is to restrict the different methods that other developers
+can call.
+*/ 
